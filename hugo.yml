@@ -59,3 +59,9 @@ params:
   # 侧边栏/底部版权
   footer:
     since: 2025 # 或者是当前年份
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON # 👈 必须加这个，否则搜索功能找不到数据源
