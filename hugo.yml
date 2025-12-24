@@ -10,7 +10,7 @@ theme: "PaperMod"
 hasCJKLanguage: true
 
 pagination:
-  pagerSize: 5 # 首页默认展示文章数量
+  pagerSize: 10 # 首页默认展示文章数量
 
 enableRobotsTXT: true
 enableEmoji: true
