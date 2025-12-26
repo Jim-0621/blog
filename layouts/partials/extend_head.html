@@ -1,38 +1,33 @@
-<!-- <style>
-    /* PaperMod 左侧目录样式补丁 
-       使用 extend_head.html 直接注入
-    */
-
-    /* 当屏幕宽度大于 1200px 时启用 (避免手机上遮挡) */
-    @media screen and (min-width: 1200px) {
-        
-        /* 定位目录容器 */
-        .toc {
-            position: fixed !important;
-            left: 20px !important;      /* 距离左边 20px */
-            top: 100px !important;      /* 距离顶部 100px */
-            width: 400px !important;    /* 宽度限制 */
-            
-            background: var(--entry) !important; /* 跟随主题背景 */
-            padding: 15px !important;
-            border-radius: var(--radius) !important;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05); /* 轻微阴影 */
-            z-index: 999;
-            
-            /* 允许内部滚动 */
-            max-height: 80vh;
-            overflow-y: auto;
-        }
-
-        /* 强制显示目录内容 (防止默认折叠) */
-        .toc details .inner {
-            display: block !important;
-        }
-
-        /* 隐藏 "Table of Contents" 这个标题，节省空间 */
-        .toc details summary {
-            cursor: default;
-            font-weight: bold;
-        }
+<style>
+    /* --- 颜色变量重写 --- */
+    :root {
+        --primary: #e0a0a0; 
     }
-</style> -->
+
+    /* --- 链接颜色 --- */
+    a {
+        color: #d08080;
+    }
+
+    /* --- 选中文本 --- */
+    ::selection {
+        background: #ffd1dc;
+        color: #000;
+    }
+
+    /* --- 核心：修改首页头像大小 --- */
+    .profile img {
+        width: 200px !important; 
+        height: 200px !important;
+        
+        /* 关键：自动裁剪，防止变形 */
+        object-fit: cover !important; 
+        
+        /* 圆形头像 */
+        border-radius: 50% !important;     
+        border: 4px solid #fff !important; /* 加个白边更好看 */
+
+        /* 阴影 */
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+    }
+</style>

@@ -1,0 +1,23 @@
+{{- /* J&N Memory: 恋爱计数器脚本 
+    逻辑：(今天 - 开始日期) + 1 = 第几天
+*/ -}}
+
+<script>
+    var s1 = '2022-04-09'; // 你们在一起的日期
+    s1 = new Date(s1.replace(/-/g, "/"));
+    s2 = new Date();
+    var days = s2.getTime() - s1.getTime();
+    
+    // 计算天数 (毫秒转天)
+    var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+    
+    // 很多情侣习惯把在一起的第一天算作第1天，所以这里 +1
+    // 如果你喜欢从0开始算，就把下面这行的 + 1 去掉
+    var final_days = number_of_days + 1;
+    
+    // 找到 HTML 里的占位符并填入数字
+    var days_element = document.getElementById('days');
+    if (days_element) {
+        days_element.innerHTML = final_days;
+    }
+</script>

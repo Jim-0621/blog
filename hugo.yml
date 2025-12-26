@@ -1,8 +1,9 @@
 # --- 基础配置 ---
 # ⚠️ 这里必须填对，否则样式会乱。
-baseURL: "https://jim-0621.github.io/blog/"
+baseURL: "https://jim-0621.github.io/jn-memory/"
 languageCode: "zh-cn"
-title: "Jim's Blog" # 默认标题，可随意改
+title: "J & N 的小宇宙" # 默认标题，可随意改
+description: "记录我们相识以来的点点滴滴"
 theme: "PaperMod"
 
 # 开启 CJK (中日韩) 语言支持
@@ -19,43 +20,49 @@ timeZone: Asia/Shanghai
 # --- 菜单栏配置 ---
 menu:
   main:
-    - identifier: home
-      name: 首页
-      url: /
-      weight: 10
-    - identifier: tech
-      name: 技术干货
-      url: /categories/技术干货/
-      weight: 11
-    - identifier: life
-      name: 生活感悟
-      url: /categories/生活感悟/
-      weight: 12
-    - identifier: archives
-      name: 归档
+    - identifier: timeline
+      name: "🕰️ 时光机"  # 或者用 ⏳、🚀
       url: /archives/
-      weight: 20
-    - identifier: search
-      name: 搜索
-      url: /search/
-      weight: 30
+      weight: 1
+
+    - identifier: story
+      name: "💑 我们的故事"
+      url: /categories/我们的故事/
+      weight: 2
+
+    - identifier: travel
+      name: "✈️ 足迹"
+      url: /categories/足迹/
+      weight: 3
+
     - identifier: tags
-      name: 标签
+      name: "🏷️ 标签"
       url: /tags/
-      weight: 40
+      weight: 4
+    
+    - identifier: search
+      name: "🔍 搜索"
+      url: /search/
+      weight: 5
 
 # --- PaperMod 主题参数 ---
 params:
   env: production
-  description: "技术分享和生活感悟"
+  description: "记录我们相识以来的点点滴滴"
   author: Jim
   defaultTheme: auto # 跟随系统切换深色/浅色模式
 
-  # 首页显示的个人信息卡片
-  homeInfoParams:
-    Title: "Hi 👋"
-    Content: >
-      欢迎来到我的博客。
+  profileMode:
+    enabled: true
+    title: "CXJ ❤️ YDN" 
+    subtitle: "从 2022 年 4 月 9 日开始的故事<br/>今天是第 <span id='days'>0</span> 天"
+    imageUrl: "images/home_us.jpg"
+    imageTitle: "Love"
+    buttons:
+      - name: "💑 我们的故事"
+        url: "/posts/story/"
+      - name: "✈️ 足迹"
+        url: "/posts/footprint/"
 
   # 社交链接 (可按需修改或删除)
   socialIcons:
@@ -75,10 +82,10 @@ params:
   footer:
     since: 2025 # 或者是当前年份
 
-  # ✅ 开启目录
+  # 开启目录
   ShowToc: true
   
-  # ✅ 默认自动展开目录 (如果不加这行，默认是折叠的，需要点一下才开)
+  # 默认不展开目录
   TocOpen: false
 
 outputs:
@@ -86,3 +93,8 @@ outputs:
     - HTML
     - RSS
     - JSON # 👈 必须加这个，否则搜索功能找不到数据源
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
