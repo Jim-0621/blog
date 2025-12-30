@@ -40,7 +40,6 @@ menu:
       url: /categories/与妻书/
       weight: 4
 
-    # 👇 顺延后面的序号
     - identifier: tags
       name: "🏷️ 标签"
       url: /tags/
